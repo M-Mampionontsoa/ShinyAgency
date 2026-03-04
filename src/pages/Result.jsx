@@ -8,6 +8,13 @@ export default function Result() {
   return (
     <>
       <Header />
+      <ul>
+        {answer.map((answer) => {
+          <li>
+            Question numero {answer.questionNumber}: {answer.answer}
+          </li>;
+        })}
+      </ul>
       <h1>Result</h1>
     </>
   );
