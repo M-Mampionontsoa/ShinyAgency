@@ -4,18 +4,17 @@ import { useAnswer } from "../features/Context/AnswerProvider";
 
 export default function Result() {
   const { answer } = useAnswer();
-  console.log(answer);
   return (
     <>
       <Header />
+      <h1>Result</h1>
       <ul>
-        {answer.map((answer) => {
+        {answer.map((answer) => (
           <li>
             Question numero {answer.questionNumber}: {answer.answer}
-          </li>;
-        })}
+          </li>
+        ))}
       </ul>
-      <h1>Result</h1>
     </>
   );
 }
