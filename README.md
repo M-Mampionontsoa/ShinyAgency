@@ -3,7 +3,7 @@
 
 Welcome to **ShinyAgency**! This is a full-stack web application built to practice API data fetching, React hooks, and backend integration with Express. It simulates a freelancing platform where users can browse profiles, take surveys, and more.
 
-## ✨ Project Purpose
+##  Project Purpose
 
 This project was created to practice and demonstrate key React concepts:
 
@@ -38,7 +38,7 @@ Before you begin, make sure you have installed:
 - [Git](https://git-scm.com/)
 - npm (comes with Node.js)
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### 1. Clone the repository
 ```bash
