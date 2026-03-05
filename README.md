@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+````markdown
+# ShinyAgency - Full-Stack Freelancing Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **ShinyAgency**! This is a full-stack web application built to practice API data fetching, React hooks, and backend integration with Express. It simulates a freelancing platform where users can browse profiles, take surveys, and more.
 
-## Available Scripts
+## Project Purpose
 
-In the project directory, you can run:
+This project was created to practice and demonstrate key React concepts:
 
-### `npm start`
+- **Data Fetching**: Retrieving data from a REST API
+- **Hooks**: Using `useState`, `useEffect`, `useContext`, and custom hooks
+- **React Router**: Handling multi-page navigation
+- **Context API**: Global state management (theme, authentication, survey answers)
+- **Testing**: Unit tests with React Testing Library (`Card.test.jsx`, `Footer.test.jsx`, etc.)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project is split into two main parts:
 
-### `npm test`
+- **`/` (Root)** : The React frontend (bootstrapped with Create React App)
+- **`/Shiny-Agency-API`** : The Express backend (included as a Git submodule)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+Before you begin, make sure you have installed:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+- [Git](https://git-scm.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation & Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Follow these steps to run the project locally.
 
-### `npm run eject`
+### 1. Clone the repository (with submodule)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The backend is a Git submodule. To clone it together with the frontend, use:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone --recurse-submodules https://github.com/M-Mampionontsoa/ShinyAgency.git
+```
+````
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you've already cloned the project without the submodule, run this command in the root directory to fetch it:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git submodule update --init --recursive
+```
 
-## Learn More
+### 2. Install frontend dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Navigate to the project root and install the required packages:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd ShinyAgency
+npm install
+```
 
-### Code Splitting
+### 3. Install backend dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Navigate to the API folder and install its dependencies:
 
-### Analyzing the Bundle Size
+```bash
+cd Shiny-Agency-API
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. Configure environment variables (if needed)
 
-### Making a Progressive Web App
+Check if the backend requires a `.env` file. If so, create one in the `Shiny-Agency-API` folder. Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+PORT=5000
+# Add any other variables like DB_URL, API keys, etc.
+```
 
-### Advanced Configuration
+### 5. Start the backend server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+From the `Shiny-Agency-API` folder, run:
 
-### Deployment
+```bash
+npm start
+# or npm run dev if a dev script is available
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The API should now be running on `http://localhost:5000` (or the port you configured).
 
-### `npm run build` fails to minify
+### 6. Start the frontend application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Open a new terminal, go back to the root folder, and run:
+
+```bash
+cd ShinyAgency
+npm start
+```
+
+This runs the React app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload when you make changes.
+
+## Running Tests
+
+- **Frontend tests**: `npm test` (from the root directory)
+- **Backend tests**: `npm test` (from the `Shiny-Agency-API` directory, if any are set up)
+
+## Built With
+
+- **Frontend**: React, React Router, Context API, CSS Modules
+- **Backend**: Express.js, Node.js
+- **Testing**: Jest, React Testing Library
+- **HTTP Client**: Axios
+
+## Key Features Implemented
+
+- User authentication context
+- Theme switching (light/dark mode)
+- Multi-step survey with answer persistence
+- API data fetching with Axios
+- Protected routes
+- Custom hooks and utility functions
+- Unit tests for components
+
+## Notes
+
+- The backend API must be running for the frontend to fetch data correctly.
+- If you encounter CORS issues, ensure the backend is configured to accept requests from `http://localhost:3000`.
+- This project is for educational purposes and is a great reference for React best practices.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+Created as a learning exercise to deepen understanding of React, API integration, and full-stack development.
+
+```
+
+
+```
