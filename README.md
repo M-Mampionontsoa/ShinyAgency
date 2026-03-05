@@ -14,8 +14,8 @@ This project was created to practice and demonstrate key React concepts:
 - **Testing**: Unit tests with React Testing Library
 
 ## Project Structure
-```
 
+```bash
 ShinyAgency/
 ├── src/ # React frontend
 │ ├── features/ # Reusable components and contexts
@@ -29,8 +29,8 @@ ShinyAgency/
 │ └── server.js # Main server file
 ├── package.json # Frontend dependencies
 └── README.md
+``` 
 
-````
 
 ##  Prerequisites
 Before you begin, make sure you have installed:
